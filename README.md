@@ -2,7 +2,7 @@
 
 〉https://appgallery.huawei.com/app/detail?id=app.flytype.hmos.bim&channelId=SHARE
 
-# VGHFly：
+# VGHFly：【主题版本已经落后样式仅供参考！！！】
 
 基于原主题修改内容：
 
