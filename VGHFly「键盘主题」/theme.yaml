@@ -110,7 +110,7 @@ preset_candidates:
     padding: 5 #候选项内边距
     spacing: 8 #候选间距
     use_cursor: true #高亮候选项
-    candidate_view_height: 36 #候选区高度
+    candidate_view_height: 52 #候选区高度
     comment_height: 12 #编码提示区高度
     comment_on_top: true #编码提示在上方或右侧
     text_height: 20 #编码区高度
@@ -484,7 +484,7 @@ preset_keyboards:
   default:
     name: default
     ascii_mode: 0
-    height: 46
+    height: 44
     height_land: 34
     horizontal_gap: 6
     vertical_gap: 10
@@ -508,7 +508,7 @@ preset_keyboards:
     #现在只支持配置click,swipe_up,swipe_down键盘
     keys:
       # 1
-      - {click: q, label: Q, swipe_up: commit_1,  swipe_down: "一", long_click: [。, commit_1, commit_Q]}
+      - {click: q, label: Q, swipe_up: commit_1,  swipe_down: "一", long_click: [commit_1, commit_Q, commit_q]}
       - {click: w, label: W, swipe_up: commit_2,  swipe_down: "二", long_click: [commit_2, commit_W, commit_w]}
       - {click: e, label: E, swipe_up: commit_3,  swipe_down: "三", long_click: [commit_3, commit_E, commit_e]}
       - {click: r, label: R, swipe_up: commit_4,  swipe_down: "四", long_click: [commit_4, commit_R, commit_r]}
@@ -520,7 +520,7 @@ preset_keyboards:
       - {click: p, label: P, swipe_up: commit_0,  swipe_down: "〇", long_click: [commit_0, commit_P, commit_p]}
       - {width: 5}
       #2
-      - {click: a, label: A, swipe_up: commit_fulltilde, swipe_down: "~", long_click: [commit_fulltilde, commit_A]}
+      - {click: a, label: A, swipe_up: function_keyboard_selectAll, swipe_down: "~", long_click: [commit_fulltilde, commit_A]}
       - {click: s, label: S, swipe_up: commit_halfslash, swipe_down: "/", long_click: [commit_halfslash, commit_S, commit_s]}
       - {click: d, label: D, swipe_up: commit_fullcolon, swipe_down: ":", long_click: [commit_fullcolon, commit_D, commit_d]}
       - {click: f, label: F, swipe_up: commit_fullsemicolon, swipe_down: ";", long_click: [commit_fullsemicolon, commit_F, commit_f]}
@@ -534,21 +534,21 @@ preset_keyboards:
       - {click: shift, has_menu: text_delimiter, width: 13, name: shift, preview: false}
       - {width: 2}
       - {click: z, label: Z, swipe_up: send_grave,  swipe_down: "-", long_click: [send_grave, commit_halfminus, commit_Z, commit_z]} # 反查
-      - {click: x, label: X, swipe_up: commit_halfunderline,  swipe_down: "_", long_click: [commit_halfunderline, commit_X, commit_x]}
-      - {click: c, label: C, swipe_up: commit_halfpoundsign,  swipe_down: "#", long_click: [commit_halfpoundsign, commit_C, commit_c]}
-      - {click: v, label: V, swipe_up: commit_fullquestionmark,  swipe_down: "?", long_click: [commit_fullquestionmark, commit_V, commit_v]}
+      - {click: x, label: X, swipe_up: function_keyboard_cut,  swipe_down: "_", long_click: [commit_halfunderline, commit_X, commit_x]} #剪切
+      - {click: c, label: C, swipe_up: function_keyboard_copy,  swipe_down: "#", long_click: [commit_halfpoundsign, commit_C, commit_c]} #复制
+      - {click: v, label: V, swipe_up: function_keyboard_paste,  swipe_down: "?", long_click: [commit_fullquestionmark, commit_V, commit_v]} #粘贴
       - {click: b, label: B, swipe_up: commit_fullexclamationpoint,  swipe_down: "!", long_click: [commit_fullexclamationpoint, commit_B, commit_b]}
       - {click: n, label: N, swipe_up: "，",  swipe_down: commit_halfcomma, long_click: [，, commit_N, commit_n]}
       - {click: m, label: M, swipe_up: "。",  swipe_down: commit_halfperiod, long_click: [。, commit_M, commit_m]}
       - {width: 2}
-      - {click: backspace, width: 13, name: backspace, preview: false}
+      - {click: backspace, swipe_up: function_keyboard_clearAll, width: 13, name: backspace, preview: false} #清空 
       #4
-      - {click: eisu_toggle_123_number, width: 15, has_menu: text_halfperiod, name: number, preview: false}
+      - {click: eisu_toggle_123_number, swipe_up: eisu_toggle_符_symbols, width: 15, has_menu: text_halfperiod, name: number, preview: false}
       - {click: eisu_toggle_ABC_english, width: 10, name: en, preview: false}
       - {click: commit_fullcomma,  swipe_up: "?", name: commit_fullcomma, width: 10, preview: false} #逗号+问号
       - {click: space, width: 30, name: space, swipe_up: select_scecond, preview: false}
       - {click: send_ffhc,  swipe_up: "。", name: send_ffhc, width: 10, preview: false} #次选+句号
-      - {click: return, width: 25, name: return, swipe_up: select_third, composing: confirm, long_click: next, rect_preview: true, preview: false}
+      - {click: return, width: 25, name: return, composing: confirm, long_click: next, rect_preview: true, preview: false}
     width: 10
 
   english:
@@ -590,7 +590,7 @@ preset_keyboards:
       - {click: n, swipe_up: ",",  long_click: [",", N, n]}
       - {click: m, swipe_up: ".",  long_click: [".", M, m]}
       - {width: 2}
-      - {click: backspace, width: 13, name: backspace}
+      - {click: backspace, swipe_up: function_keyboard_clearAll, width: 13, name: backspace}
       #4
       - {click: eisu_toggle_123_number, width: 15, name: number}
       - {click: eisu_toggle_返回_default_schema_default, width: 10, name: default}
@@ -605,33 +605,34 @@ preset_keyboards:
     ascii_mode: 1
     name: number
     preview: false
-    height: 46
+    height: 44
     width: 22
     keys:
       #1
       # - {width: 1}
-      - {collection: ["=", "%", "-", "+", "×" , "/", ",", "#", ",", "?", ":", "*"], width: 17, height: 165, height_land: 111, row_height: 39, row_height_land: 35, row_vertical_gap: 3, show_row_back_image: false, name: table}
+      - {collection: ["=", "%", "-", "+", "×" , "/", ",", "#", ",", "?", ":", "*"], width: 17, height: 158, height_land: 111, row_height: 39, row_height_land: 35, row_vertical_gap: 3, show_row_back_image: false, name: table}
       - {click: 1, height: 50}
       - {click: 2, height: 50}
       - {click: 3, height: 50}
-      - {click: backspace, width: 17, height: 50, name: backspace}
+      - {click: backspace, swipe_up: function_keyboard_clearAll, width: 17, height: 50, name: backspace}
 
-      # # #2
+      #2
       - {width: 17}
       - {click: 4, height: 50}
       - {click: 5, height: 50}
       - {click: 6, height: 50}
       - {click: send_dot, width: 17, height: 50, name: dot}
-
+      
+      #3
       - {width: 17}
       - {click: 7, height: 50}
       - {click: 8, height: 50}
       - {click: 9, height: 50}
       - {click: commit_halfat, width: 17, height: 50, name: halfat}
 
-      # - {width: 1}
-      - {click: eisu_toggle_符_dotsymbols, width: 17, height: 46, name: default}
-      - {click: eisu_toggle_返回_default, width: 22, height: 46}
+      #4
+      - {click: eisu_toggle_返回_default, width: 17, height: 46}
+      - {click: eisu_toggle_符_dotsymbols, width: 22, height: 46, name: default}
       - {click: commit_0, height: 46}
       - {click: space, name: space, height: 46}
       - {click: return, name: return, width: 17, height: 46, composing: confirm}
@@ -701,7 +702,7 @@ preset_keyboards:
       #l: 。⋯…⋯⋯
       - {click: text_full_period_default_no_functional, long_click: [text_fullperiod_default, text_halfellipsis_default, text_halfunderellipsis_default, text_fullellipsis_default]}
       - {width: 2}
-      - {click: backspace, width: 13, name: backspace}
+      - {click: backspace, swipe_up: function_keyboard_clearAll, width: 13, name: backspace}
       #4
       - {click: eisu_toggle_返回_default_schema_default, width: 13, name: default}
       - {click: eisu_toggle_123_number, name: numberPeriodFull, width: 13}
@@ -1099,4 +1100,44 @@ preset_keys:
   commit_fullcomma: {label: ",", commit: "，"}
   commit_fulldot: {label: "。", commit: "。"}
   commit_halfquote: {label: "”", commit: "”"}
-
+  commit_and: {label: "&", commit: "&"}
+  function_keyboard_clearAll:
+    command: keyboard.clearAll
+    label: "清空"
+    option: ""
+    send: function
+  function_keyboard_clearLeft:
+    command: keyboard.clearLeft
+    label: "左清空"
+    option: ""
+    send: function
+  function_keyboard_clearRight:
+    command: keyboard.clearRight
+    label: "右清空"
+    option: ""
+    send: function
+  function_keyboard_copy:
+    command: keyboard.copy
+    label: "复制"
+    option: ""
+    send: function
+  function_keyboard_cut:
+    command: keyboard.cut
+    label: "剪切"
+    option: ""
+    send: function
+  function_keyboard_paste:
+    command: keyboard.paste
+    label: "粘贴"
+    option: ""
+    send: function
+  function_keyboard_selectAll:
+    command: keyboard.selectAll
+    label: "全选"
+    option: ""
+    send: function
+  function_rime_clear:
+    command: candidate.clear
+    label: "重输"
+    option: ""
+    send: function
