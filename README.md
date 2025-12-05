@@ -2,7 +2,7 @@
 
 〉https://appgallery.huawei.com/app/detail?id=app.flytype.hmos.bim&channelId=SHARE
 
-# VGHFly（适配超越输入法2.5版本）：
+# VGHFly（适配超越输入法2.5.1测试版本）：
 
 基于原主题修改内容：
 
