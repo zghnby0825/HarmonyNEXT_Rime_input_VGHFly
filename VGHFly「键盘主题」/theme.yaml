@@ -459,7 +459,7 @@ preset_keyboards:
     - { click: space, width: 41, name: space }
     - { click: text_fullcomma2_default, name: text_fullcomma2_default, width: 13, preview: false }
     # - {click: eisu_toggle_符_number, name: numberPeriodFull, width: 13}
-    - { click: return, width: 20, name: return, composing: confirm, , long_click: [function_keyboard_clearAll, function_keyboard_clearLeft, function_keyboard_clearRight,  function_keyboard_undo, function_keyboard_redo, next] }
+    - { click: return, width: 20, name: return, composing: confirm, long_click: [function_keyboard_clearAll, function_keyboard_clearLeft, function_keyboard_clearRight,  function_keyboard_undo, function_keyboard_redo, next] }
   half_symbols:
     name: half_symbols
     __include: ./../public/preset_menu/default:/preset_menu/symbol_menu
@@ -503,7 +503,7 @@ preset_keyboards:
     - { click: text_halfperiod_default, name: numberPeriodFull, width: 13 }
     - { click: space, width: 38, name: space }
     - { click: text_halfcomma_default, name: numberPeriodFull, width: 11 }
-    - { click: return, width: 23, name: return, , long_click: [function_keyboard_clearAll, function_keyboard_clearLeft, function_keyboard_clearRight,  function_keyboard_undo, function_keyboard_redo, next] }
+    - { click: return, width: 23, name: return, long_click: [function_keyboard_clearAll, function_keyboard_clearLeft, function_keyboard_clearRight,  function_keyboard_undo, function_keyboard_redo, next] }
 
 #按键定义
 preset_keys:
