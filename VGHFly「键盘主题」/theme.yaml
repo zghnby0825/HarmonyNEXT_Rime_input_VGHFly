@@ -57,15 +57,15 @@ preset_keyboards:
     - { click: p, label: P, swipe_up: commit_0, swipe_down: ")", long_click: [ commit_p, commit_0, commit_P ] }
     - { width: 5 }
     #2
-    - { click: a, label: A, swipe_up: function_keyboard_selectAll, swipe_down: "——", long_click: [ commit_a, "—", commit_A ] }
+    - { click: a, label: A, swipe_up: function_keyboard_selectAll, swipe_down: text_halftilde_default, long_click: [ commit_a, "~", commit_A ] }
     - { click: s, label: S, swipe_up: "*", swipe_down: "……", long_click: [ commit_s, "*", commit_S ] }
     - { click: d, label: D, swipe_up: "/", swipe_down: "$", long_click: [ commit_d, "/", commit_D ] }
     - { click: f, label: F, swipe_up: "；", swipe_down: "《", long_click: [ commit_f, "；", commit_F ] }
     - { click: g, label: G, swipe_up: "！", swipe_down: "》", long_click: [ commit_g, "！", commit_G ] }
     - { click: h, label: H, swipe_up: "-", swipe_down: "“", long_click: [ commit_h, "-", commit_H ] }
     - { click: j, label: J, swipe_up: "#", swipe_down: "”", long_click: [ commit_j, "#", commit_J ] }
-    - { click: k, label: K, swipe_up: "+", swipe_down: "（", long_click: [ commit_k, "+", commit_K ] }
-    - { click: l, label: L, swipe_up: "@", swipe_down: "）", long_click: [ commit_l, "@", commit_L ] }
+    - { click: k, label: K, swipe_up: "+", swipe_down: text_half_bracket_left, long_click: [ commit_k, "+", commit_K ] }
+    - { click: l, label: L, swipe_up: "@", swipe_down: text_half_bracket_right, long_click: [ commit_l, "@", commit_L ] }
     - { width: 5 }
     #3
     - { click: shift, has_menu: text_delimiter, width: 13, name: shift, preview: false }
